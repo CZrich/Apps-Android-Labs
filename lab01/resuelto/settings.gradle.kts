@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "studentConf"
+rootProject.name = "proLogin"
 include(":app")
- 

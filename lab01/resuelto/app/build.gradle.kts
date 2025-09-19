@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.plataformas.studentconf"
+    namespace = "com.plataformas.prologin"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.plataformas.studentconf"
+        applicationId = "com.plataformas.prologin"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
