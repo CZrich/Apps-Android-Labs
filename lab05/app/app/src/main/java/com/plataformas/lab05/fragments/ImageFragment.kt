@@ -5,56 +5,85 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import com.plataformas.lab05.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ImageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ImageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_image, container, false)
+        val view = inflater.inflate(R.layout.fragment_image, container, false)
+
+        // Click en card 1: Cañón del Colca
+        view.findViewById<CardView>(R.id.cardImage1).setOnClickListener {
+            openDetail(
+                title = "Cañón del Colca",
+                description = "El Cañón del Colca es uno de los más profundos del mundo, con más de 3,400 metros de profundidad. Es el hogar del majestuoso cóndor andino y ofrece paisajes impresionantes con terrazas pre-incas, pueblos tradicionales y aguas termales.\n\nEl mejor lugar para observar el vuelo de los cóndores es la Cruz del Cóndor, donde estas magníficas aves aprovechan las corrientes térmicas para elevarse.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        // Click en card 2: Mirador de Yanahuara
+        view.findViewById<CardView>(R.id.cardImage2).setOnClickListener {
+            openDetail(
+                title = "Mirador de Yanahuara",
+                description = "El Mirador de Yanahuara es uno de los lugares más emblemáticos de Arequipa. Desde aquí se puede apreciar una vista panorámica de la ciudad blanca y los tres volcanes que la rodean: Misti, Chachani y Pichu Pichu.\n\nEl mirador cuenta con arcos de sillar donde están grabados versos de poetas arequipeños ilustres.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        // Click en card 3: Ruta del Sillar
+        view.findViewById<CardView>(R.id.cardImage3).setOnClickListener {
+            openDetail(
+                title = "Ruta del Sillar",
+                description = "La Ruta del Sillar es un recorrido por las canteras de donde se extrae el sillar, la piedra volcánica blanca característica de Arequipa. Aquí se puede observar el trabajo artesanal de los talladores y las impresionantes esculturas talladas en las paredes de piedra.\n\nEs una experiencia única que conecta con la tradición arquitectónica de la Ciudad Blanca.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        // Click en card 4: Volcán Chachani
+        view.findViewById<CardView>(R.id.cardImage4).setOnClickListener {
+            openDetail(
+                title = "Volcán Chachani",
+                description = "El Chachani es el volcán más alto de la región con 6,075 metros sobre el nivel del mar. Es considerado uno de los seismiles más accesibles del mundo y es popular entre montañistas de todos los niveles.\n\nSu nombre proviene del quechua 'chachani' que significa 'el de la pollera' por su forma cónica.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        // Click en card 5: Salinas y Aguada Blanca
+        view.findViewById<CardView>(R.id.cardImage5).setOnClickListener {
+            openDetail(
+                title = "Salinas y Aguada Blanca",
+                description = "La Reserva Nacional Salinas y Aguada Blanca es un área protegida ubicada entre Arequipa y Moquegua. Alberga especies como vicuñas, alpacas, flamencos y tarucas en un ecosistema de puna.\n\nSus lagunas de aguas cristalinas reflejan los volcanes circundantes, creando paisajes de ensueño.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        // Click en card 6: Molino de Sabandia
+        view.findViewById<CardView>(R.id.cardImage6).setOnClickListener {
+            openDetail(
+                title = "Molino de Sabandia",
+                description = "El Molino de Sabandia es una construcción del siglo XVIII hecha completamente de sillar. Fue restaurado en 1973 y actualmente funciona mostrando la técnica tradicional de molienda de granos.\n\nRodeado de bellos paisajes campestres y andenerías, es un lugar perfecto para el turismo vivencial.",
+                imageRes = R.drawable.ic_launcher_background
+            )
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ImageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ImageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun openDetail(title: String, description: String, imageRes: Int) {
+        val detailFragment = DetailFragment.newInstance(title, description, imageRes)
+        parentFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right,
+                android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right
+            )
+            .replace(R.id.fragmentContainerView2, detailFragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

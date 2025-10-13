@@ -1,15 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.TextFragment">
+    android:background="#F5F5F5">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:text="Ejemplo de Widget TextView"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lugares de Arequipa"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <!-- Card 1: La Catedral -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCatedral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Catedral"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/arequipa" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="La Catedral"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Monasterio de Santa Catalina -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMonasterio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Monasterio"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/arequipa" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="Monasterio de Santa Catalina"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Plaza de Armas -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPlaza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Plaza de Armas"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/campi_a" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="Plaza de Armas"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 4: Volcán Misti -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMisti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Volcán Misti"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    app:srcCompat="@drawable/campi_a" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="Volcán Misti"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

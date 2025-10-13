@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Imagen grande -->
+        <ImageView
+            android:id="@+id/ivDetailImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="Imagen del lugar"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:srcCompat="@drawable/arequipa" />
+
+        <!-- Contenido -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="La catedral"
+                android:textColor="#333333"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Descripción -->
+            <TextView
+                android:id="@+id/tvDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="4dp"
+                android:text="Fue construida con ignimbrita (piedra de origen volcánico), y bóvedas de ladrillo; es el santuario principal de la ciudad ocupando todo el lado norte de la Plaza de Armas. Construida totalmente en sillar, exhibe un estilo neorrenacentista con cierta influencia gótica. Su fachada está constituida por setenta columnas con capiteles corintios, tres portadas y dos grandes arcos laterales. Está rematada por dos altas torres renacentistas y estilizadas."
+                android:textColor="#555555"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

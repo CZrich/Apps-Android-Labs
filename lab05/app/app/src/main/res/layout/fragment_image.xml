@@ -1,14 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ImageFragment">
+    android:background="#F5F5F5">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Galería de Arequipa"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <!-- Grid de imágenes -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <!-- Card 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage1"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Colca"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Cañón del Colca"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage2"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Yanahuara"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Mirador de Yanahuara"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage3"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Sillar"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Ruta del Sillar"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 4 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage4"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Chachani"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Volcán Chachani"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 5 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage5"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Salinas"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Salinas y Aguada Blanca"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 6 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage6"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="Molino"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Molino de Sabandia"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:background="#AA000000"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>
