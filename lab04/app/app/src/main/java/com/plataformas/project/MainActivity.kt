@@ -1,19 +1,14 @@
 package com.plataformas.project
-
-import android.app.FragmentManager
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
-
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.plataformas.project.frames.ComunidadFragment
 import com.plataformas.project.frames.HomeFragment
 import com.plataformas.project.frames.MapFragment
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var  bottomNavigation: BottomNavigationView
     //private lateinit var  fragmentTransation:
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +20,10 @@ class MainActivity : AppCompatActivity() {
         //por defaul estar en home
 
         replaceFragment(HomeFragment())
-
         //cabia los framges
         bottomNavigation.setOnItemSelectedListener {
-
             item ->
             when(item.itemId){
-
                 R.id.menu_home -> replaceFragment(HomeFragment())
                 R.id.menu_comunidad->replaceFragment(ComunidadFragment())
                 R.id.menu_mapa-> replaceFragment(MapFragment())
@@ -40,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 
     // funcion para cambiar de fragments
     private fun replaceFragment(fragment: Fragment){
@@ -52,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
 
     }
-
 
 
 
