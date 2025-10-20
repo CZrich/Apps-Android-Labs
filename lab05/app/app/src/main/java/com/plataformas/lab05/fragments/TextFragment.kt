@@ -21,7 +21,7 @@ class TextFragment : Fragment() {
             openDetail(
                 title = "La Catedral",
                 description = "La Catedral Basílica de Arequipa es uno de los primeros monumentos religiosos del siglo XVII en la ciudad. Ocupa todo el lado norte de la Plaza de Armas. Su fachada está compuesta de setenta columnas con bóvedas. Tres portadas la decoran, la principal y dos laterales, con arcos de medio punto.\n\nEn su interior destacan el púlpito neogótico francés tallado por Rigot en 1879, un órgano monumental belga construido por Loret en 1870 y vitrales góticos.",
-                imageRes = R.drawable.ic_launcher_background
+                imageRes = R.drawable.arequipa
             )
         }
 

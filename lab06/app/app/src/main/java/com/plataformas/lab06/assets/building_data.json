@@ -1,0 +1,80 @@
+{
+  "name": "Edificio Administrativo - Universidad",
+  "rooms": [
+    {
+      "id": "room_1",
+      "name": "Sala 1",
+      "type": "salon",
+      "description": "Sala de conferencias principal con capacidad para presentaciones y reuniones importantes. Equipada con proyector y sistema de audio.",
+      "area": 45.5,
+      "capacity": 30,
+      "additionalInfo": "Horario: Lunes a Viernes 8:00 - 18:00. Requiere reserva previa.",
+      "vertices": [
+        {"x": 100, "y": 50},
+        {"x": 350, "y": 50},
+        {"x": 350, "y": 250},
+        {"x": 100, "y": 250}
+      ]
+    },
+    {
+      "id": "room_2",
+      "name": "Sala 2",
+      "type": "salon",
+      "description": "Sala de estudio y trabajo colaborativo. Espacio amplio con mesas modulares y pizarras interactivas.",
+      "area": 52.0,
+      "capacity": 25,
+      "additionalInfo": "Equipamiento: 5 mesas de trabajo, aire acondicionado, WiFi de alta velocidad.",
+      "vertices": [
+        {"x": 100, "y": 300},
+        {"x": 350, "y": 300},
+        {"x": 350, "y": 550},
+        {"x": 100, "y": 550}
+      ]
+    },
+    {
+      "id": "room_3",
+      "name": "Sala 3",
+      "type": "salon",
+      "description": "Aula de capacitación con disposición tipo auditorio. Ideal para cursos y talleres.",
+      "area": 38.0,
+      "capacity": 20,
+      "additionalInfo": "Cuenta con sistema de videoconferencia y grabación de sesiones.",
+      "vertices": [
+        {"x": 400, "y": 300},
+        {"x": 700, "y": 300},
+        {"x": 700, "y": 550},
+        {"x": 400, "y": 550}
+      ]
+    },
+    {
+      "id": "room_4",
+      "name": "Sala 4",
+      "type": "salon",
+      "description": "Sala de reuniones ejecutivas con mesa de conferencia ovalada. Ambiente formal y privado.",
+      "area": 28.5,
+      "capacity": 12,
+      "additionalInfo": "Equipamiento premium: pantalla táctil de 65\", sistema de videoconferencia profesional.",
+      "vertices": [
+        {"x": 750, "y": 300},
+        {"x": 1000, "y": 300},
+        {"x": 1000, "y": 550},
+        {"x": 750, "y": 550}
+      ]
+    },
+    {
+      "id": "patio_central",
+      "name": "Patio Central",
+      "type": "patio",
+      "description": "Patio central al aire libre con jardines y áreas de descanso. Espacio de recreación y socialización para estudiantes y personal.",
+      "area": 120.0,
+      "capacity": 80,
+      "additionalInfo": "Cuenta con bancas, fuente de agua, árboles ornamentales y acceso WiFi. Espacio para eventos culturales.",
+      "vertices": [
+        {"x": 400, "y": 50},
+        {"x": 1000, "y": 50},
+        {"x": 1000, "y": 250},
+        {"x": 400, "y": 250}
+      ]
+    }
+  ]
+}
