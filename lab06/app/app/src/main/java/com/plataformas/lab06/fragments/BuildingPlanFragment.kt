@@ -1,105 +1,73 @@
 package com.plataformas.lab06.fragments
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
-import com.plataformas.lab06.databinding.DialogRoomInfoBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.plataformas.lab06.databinding.FragmentBuildingPlanBinding
+import com.plataformas.lab06.viewmodel.BuildingViewModel
 import com.plataformas.lab06.model.Room
 
-class RoomInfoDialogFragment : DialogFragment() {
+class BuildingPlanFragment : Fragment() {
 
-    private var _binding: DialogRoomInfoBinding? = null
+    private var _binding: FragmentBuildingPlanBinding? = null
     private val binding get() = _binding!!
 
-    companion object {
-        private const val ARG_ROOM_ID = "room_id"
-        private const val ARG_ROOM_NAME = "room_name"
-        private const val ARG_ROOM_TYPE = "room_type"
-        private const val ARG_ROOM_DESCRIPTION = "room_description"
-        private const val ARG_ROOM_AREA = "room_area"
-        private const val ARG_ROOM_CAPACITY = "room_capacity"
-        private const val ARG_ROOM_ADDITIONAL_INFO = "room_additional_info"
-
-        fun newInstance(room: Room): RoomInfoDialogFragment {
-            val fragment = RoomInfoDialogFragment()
-            val args = Bundle().apply {
-                putString(ARG_ROOM_ID, room.id)
-                putString(ARG_ROOM_NAME, room.name)
-                putString(ARG_ROOM_TYPE, room.type)
-                putString(ARG_ROOM_DESCRIPTION, room.description)
-                putFloat(ARG_ROOM_AREA, room.area)
-                putInt(ARG_ROOM_CAPACITY, room.capacity)
-                putString(ARG_ROOM_ADDITIONAL_INFO, room.additionalInfo)
-            }
-            fragment.arguments = args
-            return fragment
-        }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, android.R.style.Theme_Material_Light_Dialog_MinWidth)
-    }
+    private val viewModel: BuildingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DialogRoomInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentBuildingPlanBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.let { args ->
-            val name = args.getString(ARG_ROOM_NAME, "")
-            val type = args.getString(ARG_ROOM_TYPE, "")
-            val description = args.getString(ARG_ROOM_DESCRIPTION, "")
-            val area = args.getFloat(ARG_ROOM_AREA, 0f)
-            val capacity = args.getInt(ARG_ROOM_CAPACITY, 0)
-            val additionalInfo = args.getString(ARG_ROOM_ADDITIONAL_INFO, "")
+        setupObservers()
+        setupListeners()
 
-            binding.textRoomName.text = name
+        // Cargar el edificio
+        viewModel.loadBuilding(requireContext())
+    }
 
-            val typeText = when (type) {
-                "patio" -> "Patio"
-                "salon" -> "Salón"
-                else -> type.replaceFirstChar { it.uppercase() }
-            }
-            binding.textRoomType.text = "Tipo: $typeText"
+    private fun setupObservers() {
+        // Observar el edificio cargado
+        viewModel.building.observe(viewLifecycleOwner) { building ->
+            binding.buildingPlanView.setRooms(building.rooms)
+            binding.textBuildingName.text = building.name
+        }
 
-            binding.textRoomDescription.text = description
+        // Observar la habitación seleccionada
+        viewModel.selectedRoom.observe(viewLifecycleOwner) { room ->
+            binding.buildingPlanView.setSelectedRoom(room)
 
-            if (area > 0) {
-                binding.textRoomArea.text = "Área: %.2f m²".format(area)
-                binding.textRoomArea.visibility = View.VISIBLE
-            } else {
-                binding.textRoomArea.visibility = View.GONE
-            }
-
-            if (capacity > 0) {
-                binding.textRoomCapacity.text = "Capacidad: $capacity personas"
-                binding.textRoomCapacity.visibility = View.VISIBLE
-            } else {
-                binding.textRoomCapacity.visibility = View.GONE
-            }
-
-            if (additionalInfo.isNotEmpty()) {
-                binding.textAdditionalInfo.text = additionalInfo
-                binding.textAdditionalInfo.visibility = View.VISIBLE
-            } else {
-                binding.textAdditionalInfo.visibility = View.GONE
+            if (room != null) {
+                showRoomInfo(room)
             }
         }
 
-        binding.buttonClose.setOnClickListener {
-            dismiss()
+        // Observar errores
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            binding.textBuildingName.text = error
         }
+    }
+
+    private fun setupListeners() {
+        // Listener para clicks en los ambientes
+        binding.buildingPlanView.setOnRoomClickListener { room ->
+            viewModel.selectRoom(room)
+        }
+    }
+
+    private fun showRoomInfo(room: Room) {
+        val dialog = RoomInfoDialogFragment.newInstance(room)
+        dialog.show(childFragmentManager, "RoomInfoDialog")
     }
 
     override fun onDestroyView() {
