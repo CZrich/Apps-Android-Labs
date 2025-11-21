@@ -1,0 +1,5 @@
+Torre Eiffel|Monumento|Icono parisino construido en 1889 para la Exposición Universal|tower_eiffel
+Coliseo Romano|Anfiteatro|Antiguo anfiteatro en Roma, sede de gladiadores|colosseum
+Taj Mahal|Monumento Sepulcral|Mausoleo en India, símbolo de amor eterno|taj_mahal
+Pirámides de Giza|Pirámide|Antiguas tumbas egipcias, maravilla del mundo|pyramids
+Machu Picchu|Ciudad Inca|Ciudad perdida en los Andes peruanos|machu_picchu
